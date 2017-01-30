@@ -1,0 +1,48 @@
+Test 01:
+onCreate() calls: 1
+onStart() calls: 1
+onResume() calls: 1
+onRestart() calls: 0
+Explanation: Since it is the start of the application, it is the first onCreata, onStart and onResume.
+
+Test 02:
+onCreate() calls: 1
+onStart() calls: 2
+onResume() calls: 2
+onRestart() calls: 1
+Explanation: The onCreate does not increase because the screen does not kill the application and creates another on. However, the onStart, onResume and onRestart increases by one since the application has to be restarted, resumed and started when the power is on again.
+
+Test 03:
+onCreate() calls: 3
+onStart() calls: 3
+onResume() calls: 3
+onRestart() calls: 0
+Explanation: When the user changes the orientation of the device, the application is being killed and created in a new orientation. However, it application is not restarted. So, the onCreate, onStart and onResume increased once when the device was rotated to landscape and increased by one again when rotated back to portrait.
+
+Test 04:
+onCreate() calls: 1
+onStart() calls: 1
+onResume() calls: 1
+onRestart() calls: 0
+Explanation: Activity two is a brand new activity on its own. When the user presses the button, the lifecycle callback shows that is newly created.
+
+Test 05:
+onCreate() calls: 3
+onStart() calls: 3
+onResume() calls: 3
+onRestart() calls: 0
+Explanation: Similar to Activity one's rotation reason (test 03).
+
+Test 06:
+onCreate() calls: 1
+onStart() calls: 2
+onResume() calls: 2
+onRestart() calls: 1
+Explanation: When Activity two is being closed, Activity one is being restart again. However, it isn't created again.
+
+Test 07:
+onCreate() calls: 1
+onStart() calls: 1
+onResume() calls: 1
+onRestart() calls: 0
+Explanation: When Activity two is closed, the activity is being killed. Hence, when the Activity two is pressed again, the callbacks shows that it is being newly created.

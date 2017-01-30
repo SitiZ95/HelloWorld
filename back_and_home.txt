@@ -1,0 +1,13 @@
+Back button:
+onCreate() calls: 1
+onStart() calls: 1
+onResume() calls: 1
+onRestart() calls: 0
+Reason: The Back button allowed the application to be killed. With that, when user opens the application again, the numbers remained the same to a newly opened application.
+
+Home button:
+onCreate() calls: 1
+onStart() calls: 2
+onResume() calls: 2
+onRestart() calls: 1
+Reason: The application was not killed when user pressed the Home button. Initially, the numbers should be the same as the Back button results. However, since it was not killed and the user opened the application again, onStart, onResume and onRestart increases by one.
